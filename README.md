@@ -11,88 +11,9 @@ This module is based on the following sub modules which contribute to its workin
 4.	Barcode Scanner that can scan and process Bar Codes 
 5.	A Biometric Scanner used to provide access based on matching fingerprints
 
-The overall working is demonstrated by this flowchart:
-
-![](images/bb_flowchart.jpeg)
- 
-The Database System working is as follows:
-
-
-
-GUI module works according to this flow chart:
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-The Barcode Scanner Module works according to this:
-
-
-  
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-The Biometric Scanner Module works according to the following flowchart
-
 Pubic database is firstly design that can store the fingerprint of all patients and must be capable to add new one. Fingerprints store in database pass through these steps:
 
-  
-
-
-
-
-
-
-
-
-
 Critical points are then act as a primary key for the database and further data is stored in the database according to the schema.
-
-COMPARISION:
-For comparison, again input is taken from the user again these steps are implemented:
-
-
-  
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 # Section 3-Roles: 
 These are the rules that will benefit from this module:
