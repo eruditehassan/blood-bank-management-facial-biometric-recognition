@@ -1,0 +1,6 @@
+<body>
+{% for report in reports %}
+<a href = {% url 'details' report.pk %}>{{report}}<a/>
+
+{% endfor %}
+</body>

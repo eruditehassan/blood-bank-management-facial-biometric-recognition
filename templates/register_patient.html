@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register_Patient</title>
+</head>
+
+
+<body>
+    <div class="bg-img" style="position: relative; ">
+
+        <form method="POST" action="" class="container" style="position: absolute; right: 0%; top: 15%;">
+
+            <h1 class="heading">Register</h1>
+
+            {% csrf_token %}
+            </br>
+
+            <input type="text" placeholder=" Enter name" name="name" required id="name">
+            <input type="text" placeholder="Enter cnic" name="cnic" required id="cnic">
+            <input type="text" placeholder="Enter age" name="age" required id="age">
+            <input type="text" placeholder="Enter phone" name="phone" required id="phone">
+            <input type="text" placeholder="Enter email" name="email" required id="email">
+            <p style="font-size: small">By creating an account you agree to our <a href="#" style="color:dodgerblue ; font-size: 14px;">Terms & Privacy</a>.</p>
+
+            <button type="submit" class="btn">Register</button>
+
+
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: rgb(224, 216, 216);
+    font-family: 'lato', 'Arial', sans-serif;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.bg-img {
+    /* The image used */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url("./images/new_background 2.jpg");
+    /* Control the height of the image */
+    /*min-height: 380px;*/
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.container {
+    position: absolute;
+    right: 4%;
+    top: 20%;
+    margin: auto;
+    max-width: 40%;
+    text-align: center;
+    background: transparent;
+}
+
+.container .heading {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 40px;
+    background: linear-gradient(to right, rgb(251, 251, 251), #1b6d96);
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+input[type=text],
+input[type=password] {
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    width: 60%;
+    margin: 10px 0 8px 0;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid rgb(166, 175, 185);
+    align-items: center;
+}
+
+input[type=textbox] {
+    display: block;
+    margin-top: 30px;
+    color: #0589BD;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+    outline: none;
+    border-bottom: 2px solid rgb(77, 127, 185);
+}
+
+input::placeholder {
+    color: rgb(251, 249, 249);
+    text-align: center;
+    letter-spacing: .4px;
+    font-family: 'lato';
+    font-weight: 3000;
+}
+
+
+/* Set a style for the submit button */
+
+.btn,
+.signupbtn {
+    background-image: linear-gradient(to left, #0589BD, #164457);
+    color: rgb(247, 233, 233);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    opacity: 0.9;
+    margin: 20px auto;
+    font-family: lato;
+    font-size: 16px;
+    letter-spacing: .8px;
+    display: block;
+    transition: all .1s;
+    transform: scale(1);
+}
+
+.btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.btn:active {
+    outline: none;
+}
+
+.selectdiv {
+    position: relative;
+    min-width: 200px;
+    margin: 10px auto;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.selectdiv:after {
+    content: '<>';
+    font: 17px "Consolas", monospace;
+    color: #333;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 100px;
+    top: 7px;
+    padding: 0 0 2px;
+    border-bottom: 1px solid #999;
+    position: absolute;
+    pointer-events: none;
+}
+
+.selectdiv select:focus {
+    outline: none;
+}
+
+.selectdiv select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 38%;
+    max-width: 174px;
+    height: 34px;
+    /* float: right; */
+    margin: 12px auto;
+    padding: 0px 5px;
+    font-size: 14px;
+    line-height: 1.75;
+    color: #333;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    -ms-word-break: normal;
+    word-break: normal;
+    border-radius: 5px;
+}
