@@ -4,13 +4,26 @@ from django.contrib import auth
 from .models import *
 from Receptionist.models import *
 def details(request,pk):
-    Reports = Donation_Record.objects.all()
-    required = 0
-    for report in Reports:
-        if report.pk  == pk:
-            required = report
-            break
-    return render(request, "report_details.html",{"report":report})
+    if len(Laboratorist.objects.filter(user = request.user))==1:
+        if request.method == "POST":
+            report = report_analysis()
+            report.Blood_group = request.POST["blood group"]
+        
+        for analyst in Laboratorist.objects.filter(user = request.user):
+                report.analyst = analyst
+                for record in Donation_Record.objects.filter(pk = pk, status = "Pending"):
+                    report.requested_report = record
+                    report.additional_record = request.POST["report"]
+         
+        Reports = Donation_Record.objects.all()
+        required = 0
+        for report in Reports:
+            if report.pk  == pk:
+                required = report
+                break
+        return render(request, "report_details.html",{"report":report})
+    else:
+        return redirect("/laboratory")
 def signin(request):
     if request.method =="POST":
         upassword  = request.POST["psw"]
@@ -30,5 +43,8 @@ def signin(request):
     
     return render(request, "signin.html")
 def home(request):
-    Reports = Donation_Record.objects.all()
-    return render(request, "lab_dashboard.html",{"reports":Reports})
+    if len(Laboratorist.objects.filter(user = request.user))==1:
+        Reports = Donation_Record.objects.filter(status = "Pending")
+        return render(request, "lab_dashboard.html",{"reports":Reports})
+    else:
+        return redirect("/laboratory")

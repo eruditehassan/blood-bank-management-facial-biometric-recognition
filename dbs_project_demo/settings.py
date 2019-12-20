@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "Receptionist.apps.ReceptionistConfig",
-    "Laboratory.apps.LaboratoryConfig"
+    "Laboratory.apps.LaboratoryConfig",
+    "nurse.apps.NurseConfig"
 ]
 
 MIDDLEWARE = [

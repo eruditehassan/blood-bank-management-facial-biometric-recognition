@@ -1,63 +1,30 @@
 </body>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Report_Details</title>
-</head>
-
-<body>
-
-    <div class="bg-img" style="position: relative; background-image: url(./images/report_background2.jpg)  ;display: flex;
-    filter: brightness(80%);
-  justify-content: center;">
-
-        <h1 style="text-align: center; padding-top: 50px; font-size: large;">{{report.Name}}
-            <h1>
-                <div>
-                    <form method="POST" action="#" class="container" style=" background-color: transparent; width: 23%; position: absolute;
-        top: 20%;
-        left: 3%;"> {% csrf_token %}
-                        <h1 style="font-size: xx-large; font-weight: 400;">REPORT DETAILS</h1>
-
-                        <input type="text" placeholder="Report name" name="name" required id="name" style="width: 50%; color: rgb(255, 255, 255); border-bottom: 2px solid white;">
-                        <br>
-                        <div class="selectdiv">
-                            <label>
-                            <select>
-                              <option selected> Blood Group </option>
-                              <option value="A-">A-</option>
-                              <option value="B+">B+</option>
-                              <option value="B-">B-</option>
-                              <option value="A+">A+</option>
-                              <option value="O-">O-</option>
-                              <option value="O+">O+</option>
-                              <option value="AB-">AB-</option>
-                              <option value="AB+">AB+</option>
-                            </select>
-                          </label>
-                        </div>
-
-
-                        <label for="text" style="font-size: 20px; display: block; font-weight: 400;
-                    margin-bottom: -30px;">Additional description</label>
-                        <br>
-                        <textarea rows="10" cols="35" name="report" id="email"></textarea>
-                        <div class="clearfix">
-                            <button type="submit" class="btn">Submit</button>
-                        </div>
-
-                    </form>
-                </div>
-
-
+<h1>{{report.Name}}<h1>
+<form method = "POST" action = "">
+  <div class="container">
+    {% csrf_token %}
+    <label for="name"><b>Blood group</b></label>
+    <br>
+    <input type="name" placeholder="name" name="name" required id ="Blood_group">
+    <br>
+    <select name="blood group">
+      <option value="A-">A-</option>
+      <option value="B+">B+</option>
+      <option value="B-">B-</option>
+      <option value="A+">A+</option>
+      <option value="O-">O-</option>
+      <option value="O+">O+</option>
+      <option value="AB-">AB-</option>
+      <option value="AB+">AB+</option>
+    </select>
+    <br>
+    <label for="text"><b>Additional report</b></label>
+    <br>
+    <input type="text" placeholder="additional report" name="report" required id ="report" style="height:100px">
+    <div class="clearfix">
+      <button type="submit" class="signupbtn">submit</button>
+      
     </div>
-
+  </div>
+</form>
 </body>
-
-</html>

@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 status_clarity = {(1,1),(2,2),(3,3)}
-report_clearance = {("Pending","Pending"),("Fit","Fit"),("UnFit","Unfit")}
+report_clearance = {("Pending","Pending"),("Fit","Fit"),("UnFit","Unfit"),("withdrawn","withdrawn")}
 class Receptionist(models.Model):
     status = models.IntegerField(default=1,choices=status_clarity)
     user = models.OneToOneField(User ,on_delete=models.CASCADE)

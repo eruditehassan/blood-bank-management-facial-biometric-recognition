@@ -1,39 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Register_Patient</title>
-</head>
-
-
 <body>
-    <div class="bg-img" style="position: relative; ">
+<form method = "POST" action = "">
+  <div class="container">
+    <h1>Register</h1>
+    
+    {% csrf_token %}
+    <label for="name"><b>Name</b></label>
+    <input type="name" placeholder="name" name="name" required id ="name"> 
+    <label for="cnic"><b>cnic</b></label>
+    <input type="name" placeholder="cnic" name="cnic" required id ="cnic"> 
+    <label for="age"><b>age</b></label>
+    <input type="name" placeholder="age" name="age" required id ="age"> 
+    <label for="phone"><b>phone</b></label>
+    <input type="phone" placeholder="phone" name="phone" required id ="phone">
+    <label for="email"><b>email</b></label>
+    <input type="email" placeholder="email" name="email" required id ="email">
+    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
-        <form method="POST" action="" class="container" style="position: absolute; right: 0%; top: 15%;">
-
-            <h1 class="heading">Register</h1>
-
-            {% csrf_token %}
-            </br>
-
-            <input type="text" placeholder=" Enter name" name="name" required id="name">
-            <input type="text" placeholder="Enter cnic" name="cnic" required id="cnic">
-            <input type="text" placeholder="Enter age" name="age" required id="age">
-            <input type="text" placeholder="Enter phone" name="phone" required id="phone">
-            <input type="text" placeholder="Enter email" name="email" required id="email">
-            <p style="font-size: small">By creating an account you agree to our <a href="#" style="color:dodgerblue ; font-size: 14px;">Terms & Privacy</a>.</p>
-
-            <button type="submit" class="btn">Register</button>
-
-
-        </form>
+    <div class="clearfix">
+      <button type="submit" class="signupbtn">Sign In</button>
+      
     </div>
-
+  </div>
+</form>
 </body>
-
-</html>

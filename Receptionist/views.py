@@ -19,11 +19,9 @@ def signin(request):
         if ruser and required: 
             auth.login(request,ruser)
             return redirect(home)
-        
-
-    
     return render(request, "signin.html")
 def home(request):
+  if len(Receptionist.objects.filter(user = request.user))==1:
     if request.method  == "POST":
         if request.POST["name"]:
             report =  Donation_Record()
@@ -35,3 +33,5 @@ def home(request):
             report.status = "Pending"
             report.save()
     return render(request, "register_patient.html")
+  else:
+    return redirect("/receptionist")

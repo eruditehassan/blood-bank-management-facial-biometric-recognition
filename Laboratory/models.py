@@ -13,6 +13,9 @@ Blood_group = (("A+","A+")
 class Laboratorist(models.Model):
     status = models.IntegerField(choices=choice)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.user.username
+    
 class report_analysis(models.Model):
     analyst = models.ForeignKey(Laboratorist, on_delete=models.CASCADE)
     requested_report = models.OneToOneField(Donation_Record,on_delete=models.CASCADE)
