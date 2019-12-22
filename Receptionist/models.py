@@ -14,5 +14,6 @@ class Donation_Record(models.Model):
     email = models.EmailField( max_length=254)
     cnic = models.CharField(max_length = 13)
     status = models.CharField(default = "Pending", choices =report_clearance,max_length = 13)
+    barcode = models.ImageField( upload_to="static/images/donation_record",null=True)
     def __str__(self):
         return (str(self.pk))

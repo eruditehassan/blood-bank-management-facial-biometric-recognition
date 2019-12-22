@@ -1,4 +1,6 @@
+import json
 from django.shortcuts import render,redirect
+from django.http import JsonResponse
 from django.contrib.auth import login
 from django.contrib import auth
 from .models import *
@@ -45,6 +47,29 @@ def signin(request):
 def home(request):
   if len(Nurse.objects.filter(user = request.user))==1:
     Reports = Donation_Record.objects.filter(status  = "Fit")
-    return render(request, "lab_dashboard.html",{"reports":Reports})
+    return render(request, "nurse_dashboard.html",{"reports":Reports})
   else:
     return redirect("/nurse")
+def withdraw(request):
+  pk = request.POST["ScanResult"]
+  a = Donation_Record.objects.filter(pk = int(pk))
+  if a[0]:
+      a[0].status = "withdrawn"
+  nurses = Nurse.objects.all()
+  withdrawal = Withdrawal()
+  withdrawal.date = datetime.now()
+
+  return JsonResponse({"withrawal":"Successfull"})
+
+
+def getreport(request):
+  x = request.POST["ScanResult"]
+  a = Donation_Record.objects.filter(pk = int(x))
+  data = {}
+  if a[0]:
+    
+    data["name"] = a[0].Name
+    data["age"] = a[0].age
+    b = report_analysis.objects.filter(requested_report = a[0])
+    data["blood group"] = b[0].Blood_group
+  return JsonResponse(data)

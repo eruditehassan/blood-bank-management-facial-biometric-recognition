@@ -5,5 +5,6 @@ from .views import *
 urlpatterns = [
     path("",signin),
     path("home",home,name = "home"),
-    path("details<int:pk>",details,name = "details")
+    path("getreport",getreport),
+    path("details<int:pk>",details,name = "ndetails")
 ]

@@ -1,3 +1,8 @@
+import os
+import urllib3
+import requests
+import shutil
+from django.core.files import File
 from django.shortcuts import render,redirect
 from django.contrib.auth import login
 from django.contrib import auth
@@ -9,11 +14,22 @@ def details(request,pk):
             report = report_analysis()
             report.Blood_group = request.POST["blood group"]
         
-        for analyst in Laboratorist.objects.filter(user = request.user):
+            for analyst in Laboratorist.objects.filter(user = request.user):
                 report.analyst = analyst
                 for record in Donation_Record.objects.filter(pk = pk, status = "Pending"):
+                    
+
+                    response = response = requests.get("http://barcodes4.me/barcode/c128b/"+str(pk)+".png",stream = True)
+                    with open('tmp_img.png', 'wb') as f:
+                        shutil.copyfileobj(response.raw, f)
+
+                    with open('tmp_img.png', 'rb') as f:
+                        image_file = File(f) 
+                        record.barcode.save("demo.png",image_file)
+                    os.remove('tmp_img.png')
                     report.requested_report = record
                     report.additional_record = request.POST["report"]
+                    report.save()
          
         Reports = Donation_Record.objects.all()
         required = 0
@@ -48,3 +64,7 @@ def home(request):
         return render(request, "lab_dashboard.html",{"reports":Reports})
     else:
         return redirect("/laboratory")
+def barcode(pk):
+    url = 'http://barcodes4.me/barcode/c128b/'+str(pk)+'.gif'
+    response = requests.get(url, stream=True)
+    return  response.raw

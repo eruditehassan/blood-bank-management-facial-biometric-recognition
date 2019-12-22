@@ -1,5 +1,7 @@
 
 from django.shortcuts import render,redirect
+import shutil
+import requests
 from django.contrib.auth import login
 from django.contrib import auth
 from Receptionist.models import *
@@ -32,6 +34,7 @@ def home(request):
             report.phone = request.POST["phone"]
             report.status = "Pending"
             report.save()
+
     return render(request, "register_patient.html")
   else:
     return redirect("/receptionist")
