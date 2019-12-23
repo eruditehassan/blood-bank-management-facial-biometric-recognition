@@ -1,4 +1,202 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            font-size: 1.25rem;
+            font-family: sans-serif;
+            line-height: 150%;
+            background-image: url("{% static 'images/style/home-background.jpg' %}");
+        }
+        /*section {
+            color: #fff;
+            text-align: center;
+        }*/
+        
+        div {
+            height: 100%;
+        }
+        /* article {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            padding: 20px;
+        } */
+        
+        h1 {
+            font-size: 1.35rem;
+            margin: 15px 13px;
+            letter-spacing: 2px;
+            text-shadow: none;
+            font-family: cursive;
+            text-transform: uppercase;
+            color: white;
+        }
+        
+        h1:hover {
+            transition: all .2s;
+            transform: scale(1.1);
+            letter-spacing: 3px;
+        }
+        /* Pattern styles */
+        
+        .container {
+            display: table;
+            width: 100%;
+        }
+        
+        .left-half {
+            background-color: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            left: 0px;
+            width: 75%;
+        }
+        
+        .right-half {
+            background-color: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            right: 0px;
+            width: 25%;
+        }
+        
+        a {
+            text-decoration: none;
+            outline: none;
+        }
+        
+        a:hover,
+        a:focus {
+            text-decoration: none;
+            outline: none;
+        }
+        
+        .vector {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            border: 3px solid rgb(231, 142, 126);
+        }
+        
+        .vector:hover {
+            transition: all .2s;
+            transform: scale(1.05);
+        }
+        
+        .article-1 {
+            position: absolute;
+            top: 50%;
+            left: 90%;
+            transform: translate(-50%, -50%);
+            width: 36%;
+            padding: 20px;
+        }
+        
+        .article-2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 36%;
+            padding: 20px;
+        }
+        
+        .article-3 {
+            position: absolute;
+            top: 50%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            width: 36%;
+            padding: 20px;
+        }
+
+        .nav-link {
+            margin-right: 8px;
+            padding: 6px 0;
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            transition: all .2s;
+            transform: scale(1.07);
+        }
+        
+        .navbar-brand:hover {
+            transition: all .2s;
+            transform: scale(1.05);
+        }
+    </style>
+    <title>HOME</title>
+</head>
+
 <body>
-<a href = "laboratory">laboratory</a>
-<a href = "receptionist">receptionist</a>
+
+    <nav class="navbar navbar-expand-lg  navbar-dark" style="padding: 0.5rem 4rem; background-color: transparent; position: absolute; top: 0%; left: 0%; z-index: 10; width: 100%;">
+        <a class="navbar-brand" href="#" style="font-size: 1.5rem ;"><img src="{% static 'images/style/logo-design.png' %}" style="border-radius: 50px; height: 50px; "> Blood Bank Managment</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link " href="home.html" style="font-size: 1.2rem;">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active ">
+                    <a class="nav-link " href="Sign In.html" style="font-size: 1.2rem;">Sign In</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <section class="container">
+        <div class="section">
+            <div class="left-half">
+                <article class="article-1">
+                    <a href="laboratory"><img src="{% static 'images/style/vector2.jpg' %}" class="vector" alt=""></a>
+                    <a href="laboratory">
+                        <h1>Laboratorist</h1>
+                    </a>
+                </article>
+            </div>
+            <div class="right-half">
+                <article class="article-2">
+                    <a href="receptionist"><img src="{% static 'images/style/vector1.png' %}" class="vector" alt=""></a>
+                    <a href="receptionist">
+                        <h1>Receptionist</h1>
+                    </a>
+                </article>
+            </div>
+            <div >
+                <article class="article-3">
+                    <a href="nurse"><img src="{% static 'images/style/vector3.png' %}" class="vector" alt=""></a>
+                    <a href="nurse">
+                        <h1>Nurse Portal</h1>
+                    </a>
+                </article>
+            </div>
+        </div>
+
+    </section>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
+
+</html>

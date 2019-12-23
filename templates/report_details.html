@@ -1,30 +1,69 @@
+{% load static %}
 </body>
-<h1>{{report.Name}}<h1>
-<form method = "POST" action = "">
-  <div class="container">
-    {% csrf_token %}
-    <label for="name"><b>Name</b></label>
-    <br>
-    <input type="name" placeholder="name" name="name" required id ="Blood_group">
-    <br>
-    <select name="blood group">
-      <option value="A-">A-</option>
-      <option value="B+">B+</option>
-      <option value="B-">B-</option>
-      <option value="A+">A+</option>
-      <option value="O-">O-</option>
-      <option value="O+">O+</option>
-      <option value="AB-">AB-</option>
-      <option value="AB+">AB+</option>
-    </select>
-    <br>
-    <label for="text"><b>Additional report</b></label>
-    <br>
-    <input type="text" placeholder="additional report" name="report" required id ="email" style="height:100px">
-    <div class="clearfix">
-      <button type="submit" class="signupbtn">submit</button>
-      
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Report_Details</title>
+
+   
+</head>
+
+<body>
+
+    
+
+    <div class="bg-img" style="position: relative; background-image: linear-gradient(to right,rgba(0, 0, 255, 0), rgba(0, 0, 255, 0.6)),url({% static 'images/style/2413576.jpg' %});display: flex;
+    filter: brightness(80%);
+  justify-content: center;">
+
+        <h1 style="text-align: center; padding-top: 30px; font-size: x-large; margin-bottom:20px;color:white; text-transform:uppercase;padding-left: 56%; ">{{report.Name}}
+            <h1>
+                <div>
+                    <form method="POST" action="" class="container" style=" color:white; background-color: transparent; width: 23%; position: absolute;
+        top: 10%;
+        right: 10%;">
+                        <h1 style="font-size: large; font-weight: 400;color:white; padding-top:20px; padding-down:0px; ">REPORT DETAILS</h1>
+
+                        <input type="hidden" placeholder="Report name" name="name" required id="name" style="width: 50%; color: rgb(255, 255, 255); border-bottom: 2px solid white;">
+                        <br>
+                        <div class="selectdiv" >
+                            <label>
+                            <select name = "blood group" style="width:45%; ">
+                              <option selected> Blood Group </option>
+                              <option value="A-">A-</option>
+                              <option value="B+">B+</option>
+                              <option value="B-">B-</option>
+                              <option value="A+">A+</option>
+                              <option value="O-">O-</option>
+                              <option value="O+">O+</option>
+                              <option value="AB-">AB-</option>
+                              <option value="AB+">AB+</option>
+                            </select>
+                          </label>
+                        </div>
+
+
+                        <label for="text" style="font-size: 20px; display: block; font-weight: 400;
+                    margin-bottom: -30px;">Additional description</label>
+                        <br>
+                        <textarea style="background-color: rgba(255,255,255,0.3); outline: none; color:white;" rows="10" cols="35" name="report" id="email"></textarea>
+                        <div class="clearfix">
+                            <button type="submit" class="btn" style="background-color: rgba(255,255,255,0.6);">Submit</button>
+                        </div>
+
+                    </form>
+                </div>
+
+
     </div>
-  </div>
-</form>
+
 </body>
+
+</html>

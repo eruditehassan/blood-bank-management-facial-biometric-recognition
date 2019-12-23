@@ -1,0 +1,184 @@
+{% load static %}
+</body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Withdrawl Page</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            height: 100vh;
+            background-image: url({% static '/images/style/home-background.jpg' %});
+            background-attachment: fixed;
+        }
+        
+        .nav-link {
+            margin-right: 8px;
+            padding: 6px 0;
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            transition: all .2s;
+            transform: scale(1.07);
+        }
+        
+        .navbar-brand:hover {
+            transition: all .2s;
+            transform: scale(1.05);
+        }
+        /* .container {
+            display: table;
+            width: 100%;
+        } */
+        
+        .left-half {
+            background-color: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            left: 0%;
+            width: 50%;
+        }
+        
+        .right-half {
+            background-color: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            right: 0px;
+            width: 50%;
+        }
+        
+        div {
+            height: 100%;
+        }
+        
+        input[type=text],
+        input[type=password] {
+            padding: 5px;
+            color: rgb(255, 255, 255);
+            width: 60%;
+            margin: 10px 0 8px 0;
+            border: none;
+            background: transparent;
+            border-bottom: 2px solid rgb(166, 175, 185);
+            align-items: center;
+        }
+        
+        input[type=textbox] {
+            display: block;
+            margin-top: 30px;
+            color: #0589BD;
+        }
+        
+        input[type=text]:focus,
+        input[type=password]:focus {
+            outline: none;
+            border-bottom: 2px solid rgb(77, 127, 185);
+        }
+        
+        input::placeholder {
+            color: rgb(251, 249, 249);
+            text-align: center;
+            letter-spacing: .4px;
+            font-family: 'lato';
+            font-weight: 3000;
+        }
+        
+        .form {
+            background-color: transparent;
+            width: 50%;
+            /* position: absolute; */
+            /* top: 40%; */
+            /* left: 24%; */
+            margin: 20px auto;
+            text-align: center;
+        }
+        
+        .btn {
+            background-image: linear-gradient(to left, #0589BD, #164457);
+            color: rgb(247, 233, 233);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 2rem;
+            cursor: pointer;
+            opacity: 0.9;
+            margin: 20px auto;
+            font-family: lato;
+            font-size: 16px;
+            letter-spacing: .8px;
+            display: block;
+            transition: all .1s;
+            transform: scale(1);
+        }
+        
+        .btn:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        .btn:active {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg  navbar-dark" style="padding: 0.5rem 4rem; background-color: transparent; position: absolute; top: 0%; left: 0%; z-index: 10; width: 100%;">
+        <a class="navbar-brand" href="#" style="font-size: 1.5rem ;"><img src="{% static '/images/style/logo-design.png' %}" style="border-radius: 50px; height: 50px; "> Blood Bank Managment</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link " href="home.html" style="font-size: 1.2rem;">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active ">
+                    <a class="nav-link " href="Sign In.html" style="font-size: 1.2rem;">Sign In</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="section">
+            <div class="left-half" style="width: 100%; height: 100%;">
+                <!-- <img src="./images/bg-4.jpg" alt="" style="object-fit: cover; ">
+            </div> -->
+                <div class="right-half" style="color: cornsilk; ">
+                    <div class="bg-img">
+
+                        <h1 style="text-align: center; padding-top: 100px; font-weight: 400; font-size: x-large; margin-bottom: 20px; ">Name = {{report.Name}}
+                            <h1>
+                                <h2 style="text-align: center; padding-top: 10px; font-weight: 400; font-size: large ">BloodGroup = {{analysis.Blood_group}}
+                                    <h2>
+                                        <div>
+                                            <form method="POST" action="" class="form" style=" margin-top: 50px; background-color: transparent;  font-size: large; ">
+                                                <input type="hidden" placeholder="Report" name="report" id="name" style="width: 50%; color: rgb(255, 255, 255); border-bottom: 2px solid white;">
+                                                <input type="text" placeholder="ID" name="id" style="width: 50%; color: rgb(255, 255, 255); border-bottom: 2px solid white;"></input>
+                                                <button type="submit" class="btn">Submit</button>
+
+                                            </form>
+                                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+</body>
+
+</html>

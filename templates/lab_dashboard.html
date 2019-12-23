@@ -1,6 +1,143 @@
-<body>
-{% for report in reports %}
-<a href = {% url 'details' report.pk %}>{{report}}<a/>
+{% load static %}
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://127.0.0.1:8000/laboratory/home -->
+<html>
 
-{% endfor %}
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Lab Dashboard</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.45)), url("{% static '/images/style/bg-4.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+        }
+        
+        html {
+            font-size: 14px;
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .details {
+            float: right;
+        }
+        
+        .list {
+            margin: 7px;
+            margin-right: 35%;
+            float: left;
+            width: 30%;
+            border: 3px solid rgb(13, 0, 126);
+            border-radius: 10px;
+            background-color: rgb(137, 154, 179);
+        }
+        
+        .img-det {
+            display: flex;
+            align-items: center;
+        }
+        
+        h4 {
+            font-size: 14px;
+        }
+        
+        h4::before {
+            content: " > ";
+            color: rgb(3, 41, 212);
+            font-size: larger;
+        }
+        
+        .nav-link {
+            margin-right: 8px;
+            padding: 6px 0;
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            transition: all .2s;
+            transform: scale(1.07);
+        }
+        
+        .navbar-brand:hover {
+            transition: all .2s;
+            transform: scale(1.05);
+        }
+        
+        a {
+            text-decoration: none;
+            outline: none;
+        }
+        
+        a:hover,
+        a:focus {
+            text-decoration: none;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin-bottom: 7%;">
+        <nav class="navbar navbar-expand-lg  navbar-dark" style="padding: 0.5rem 4rem; background-color: transparent; position: absolute; top: 0%; left: 0%; z-index: 10; width: 100%;">
+            <a class="navbar-brand" href="#" style="font-size: 1.5rem ;"><img src ="{% static '/images/style/logo-design.png'%}" style="border-radius: 50px; height: 50px; "> Blood Bank Managment</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link " href="home.html" style="font-size: 1.2rem;">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active ">
+                        <a class="nav-link " href="Sign In.html" style="font-size: 1.2rem;">Sign In</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+    
+    
+ 
+    <div style="background-color: rgba(0, 0, 0, 0.5);">
+        {% for report in reports %}
+        <div class="container" style="width: 100%; display: block;">
+            <div class="list">
+                <div class="img-det" style="padding: 5px 15px; ">
+                    <a href= {% url 'details' report.pk %} style="margin-right: 10%;"><img src="{% static '/images/style/report_logo.png'%}" alt="" style=" height: 70px; width: 70px; "></a>
+                    <div class="details">
+                        <h4>Report name: {{report.Name}}</h4>
+                        <h4>age: {{report.age}}</h4>
+                        <h4>Status:{{report.status}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+       {% endfor %}
+    </div>
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
+
+</html>
