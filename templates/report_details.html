@@ -3,9 +3,7 @@
 <form method = "POST" action = "">
   <div class="container">
     {% csrf_token %}
-    <label for="name"><b>Name</b></label>
-    <br>
-    <input type="name" placeholder="name" name="name" required id ="Blood_group">
+    <label for="name"><b>Blood group</b></label>
     <br>
     <select name="blood group">
       <option value="A-">A-</option>
@@ -20,7 +18,7 @@
     <br>
     <label for="text"><b>Additional report</b></label>
     <br>
-    <input type="text" placeholder="additional report" name="report" required id ="email" style="height:100px">
+    <input type="text" placeholder="additional report" name="report" required id ="report" style="height:100px">
     <div class="clearfix">
       <button type="submit" class="signupbtn">submit</button>
       

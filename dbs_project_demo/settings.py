@@ -25,7 +25,7 @@ SECRET_KEY = 'n+t(mwmt3ebm=c)1ke!mff)#=t@0t0&eo5cu!15^_v_(y*(fm6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["10.7.23.156","127.0.0.1","10.7.23.252"]
 
 
 # Application definition
@@ -38,14 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "Receptionist.apps.ReceptionistConfig",
-    "Laboratory.apps.LaboratoryConfig"
+    "Laboratory.apps.LaboratoryConfig",
+    "nurse.apps.NurseConfig"
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -120,3 +120,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]

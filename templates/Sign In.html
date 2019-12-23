@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign In</title>
+</head>
+
+<body>
+
+    <div class="bg-img">
+        <form action="#" class="container">
+            <h1 class="heading">Sign In</h1>
+            {% csrf_token %}
+            </br>
+            <input type="text" placeholder="Enter email" required>
+            <input type="password" placeholder="Enter password" required>
+            </br>
+            <label style="font-size: 14px;">
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+            </label>
+
+            <p style="font-size:small">By creating an account you agree to our <a href="#" style="color:rgb(100, 168, 236);  font-size:14px">Terms & Privacy</a>.</p>
+            <button type="submit" class="btn">Login</button>
+
+        </form>
+
+
+    </div>
+
+
+</body>
+
+</html>
