@@ -1,5 +1,7 @@
 
 from django.shortcuts import render,redirect
+import shutil
+import requests
 from django.contrib.auth import login
 from django.contrib import auth
 from Receptionist.models import *
@@ -19,11 +21,9 @@ def signin(request):
         if ruser and required: 
             auth.login(request,ruser)
             return redirect(home)
-        
-
-    
-    return render(request, "signin.html")
+    return render(request, "Sign In.html")
 def home(request):
+  if len(Receptionist.objects.filter(user = request.user))==1:
     if request.method  == "POST":
         if request.POST["name"]:
             report =  Donation_Record()
@@ -34,4 +34,7 @@ def home(request):
             report.phone = request.POST["phone"]
             report.status = "Pending"
             report.save()
+
     return render(request, "register_patient.html")
+  else:
+    return redirect("/receptionist")
